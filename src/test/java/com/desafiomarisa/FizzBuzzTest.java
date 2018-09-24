@@ -19,6 +19,7 @@ public class FizzBuzzTest extends TestCase {
 		int countBuzz = 0;
 		int countFizzBuzz = 0;
 		
+		instancia.listarFizzBuzz().clear();
 		instancia.createFizzBuzz(6);
 		for (FizzBuzz fizzBuzz : instancia.listarFizzBuzz()) {
 			switch (fizzBuzz.getDesc()) {
@@ -40,5 +41,13 @@ public class FizzBuzzTest extends TestCase {
 		assertEquals(countFizz, 2);
 		assertEquals(countBuzz, 1);
 		assertEquals(countFizzBuzz, 0);
+	}
+	
+	@Test
+	public void testNumFizzBuzz() {
+		instancia.listarFizzBuzz().clear();
+		instancia.createFizzBuzz(50);
+		assertEquals(instancia.findByNum(50).getDesc(), "Buzz");
+		assertEquals(instancia.findByNum(50).getNum(), 50);
 	}
 }

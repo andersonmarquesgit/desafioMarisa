@@ -1,6 +1,7 @@
 package com.desafiomarisa;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FizzBuzzSingleton {
@@ -49,4 +50,10 @@ public class FizzBuzzSingleton {
 		}
 	}
 
+	public FizzBuzz findByNum(int num) {
+		return this.listarFizzBuzz().stream()
+				  .filter(fizzBuzz -> num == fizzBuzz.getNum())
+				  .findAny()
+				  .orElse(null);
+	}
 }
